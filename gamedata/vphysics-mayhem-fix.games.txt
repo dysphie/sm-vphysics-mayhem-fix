@@ -3,7 +3,7 @@
 	// We patch some leftover 2003 E3 code in IVP_Mindist_Manager::recheck_ov_element that sets g_fDeferDeleteMindist to 1..
 	// When set to 1, it prevents IVP_Mindist::do_impact from properly computing collisions.
 
-	"nmrih"
+	"#default"
 	{
 		"Addresses"
 		{
