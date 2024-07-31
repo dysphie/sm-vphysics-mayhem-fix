@@ -1,0 +1,29 @@
+"Games"
+{
+	// We patch some leftover 2003 E3 code in IVP_Mindist_Manager::recheck_ov_element that sets g_fDeferDeleteMindist to 1..
+	// When set to 1, it prevents IVP_Mindist::do_impact from properly computing collisions.
+
+	"nmrih"
+	{
+		"Addresses"
+		{
+			"IVP_Mindist_Manager::recheck_ov_element"
+			{
+				"offset" 	"577"
+				"windows"
+				{
+					"signature"	"IVP_Mindist_Manager::recheck_ov_element"
+				}
+			}
+		}
+
+		"Signatures"
+		{
+			"IVP_Mindist_Manager::recheck_ov_element"
+			{
+				"library"	"vphysics"
+				"windows"	"\x55\x8B\xEC\x81\xEC\x38\x0C\x00\x00\x53\x56\x57\x8B\x7D\x08\x8D\x85\xD0\xFB\xFF\xFF"
+			}	
+		}
+	}
+}
