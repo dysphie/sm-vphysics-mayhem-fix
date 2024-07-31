@@ -1,4 +1,4 @@
-# [SM] VPhysics Mayhem Bug
+# [SM] VPhysics Mayhem Bug Fix
 
 Fixes a bug where physics break permanently, causing physics objects to bounce around or phase through the world.
 
