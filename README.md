@@ -9,9 +9,7 @@ Fixes a bug where physics break permanently, causing objects to bounce around or
 - Refresh your plugins list (`sm plugins refresh` in console)
 
 ### Credits
-- `UncraftedName` for researching the bug
-- `bt`/`gmod9` for providing guidance on the fix
-- Valve Corporation for not removing leftover 2003 E3 code
+- `UncraftedName` and `bt`/`gmod9` for info on the bug
 
 ### Game support (in progress)
 - SDK 2013 Multiplayer mods
