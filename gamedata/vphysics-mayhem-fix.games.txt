@@ -9,7 +9,8 @@
 		{
 			"IVP_Mindist_Manager::recheck_ov_element"
 			{
-				"offset" 	"577"
+				
+				"offset" 	"577" // offset into `1` in `mov byte_..., 1`
 				"windows"
 				{
 					"signature"	"IVP_Mindist_Manager::recheck_ov_element"
