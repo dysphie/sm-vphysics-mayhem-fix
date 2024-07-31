@@ -4,7 +4,7 @@ Fixes a bug where physics break permanently, causing physics objects to bounce a
 
 ### Installation
 
-- Install SourceMod.
+- Install [SourceMod](https://wiki.alliedmods.net/Installing_SourceMod).
 - Extract the [release](https://github.com/dysphie/sm-vphysics-mayhem-fix/releases) zip into the `addons/sourcemod` directory.
 
 ### Credits
