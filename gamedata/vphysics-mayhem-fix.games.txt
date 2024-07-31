@@ -8,19 +8,36 @@
 	{
 		"Addresses"
 		{
-			// ┌─────────────────────────────────────────────────────────────────────┐
-			// │ .text:10073CF4 80 3D 98 49 0D 10 00    cmp     byte_100D4998, 0     │
-			// │ .text:10073CFB C7 05 94 49 0D 10 00+   mov     dword_100D4994, 0    │
-			// │ .text:10073D05 74 10                   jz      short loc_10073D17   │
-			// │                 ^----                                               │
-			// └─────────────────────────────────────────────────────────────────────┘
-
 			"IVP_Mindist::do_impact"
 			{
-				"offset" 	"69" // offset into `jz short loc_10073D17` or `if (byte_...)`
+				"signature"	"IVP_Mindist::do_impact"
+
+				// Offset into the jump instruction that runs after testing `g_fDeferDeleteMindist`
+
+				// On Windows, it may look like:
+				// ┌─────────────────────────────────────────────────────────────────────┐
+				// │ 80 3D 98 49 0D 10 00    cmp     byte_100D4998, 0                    │
+				// │ C7 05 94 49 0D 10 00+   mov     dword_100D4994, 0                   │
+				// │ 74 10                   jz      short loc_10073D17                  │
+				// |  ^                                                                  │
+				// └─────────────────────────────────────────────────────────────────────┘
+
+				// On Linux, it may look like:
+				// ┌─────────────────────────────────────────────────────────────────────┐
+				// │ 80 3D 00 39 1B 00 00    cmp     ds:g_fDeferDeleteMindist, 0         │
+				// │ C7 05 04 39 1B 00 00+   mov     ds:g_pCurrentMindist, 0             │
+				// │ 8B 45 E4                mov     eax, [ebp+var_1C]                   │
+				// │ 74 16                   jz      short loc_FE790                     │
+				// |  ^                                                                  │
+				// └─────────────────────────────────────────────────────────────────────┘
+
 				"windows"
 				{
-					"signature"	"IVP_Mindist::do_impact"
+					"offset" 	"69" 
+				}
+				"linux"
+				{
+					"offset"	"72"
 				}
 			}
 		}
@@ -31,6 +48,7 @@
 			{
 				"library"	"vphysics"
 				"windows"	"\x55\x8B\xEC\x83\xEC\x0C\x53\x8B\xD9\x56\x57\x89\x1D\x2A\x2A\x2A\x2A\x8D\x7B\x28\x8B\x07"
+				"linux"		"@_ZN11IVP_Mindist9do_impactEv"
 			}	
 		}
 	}
