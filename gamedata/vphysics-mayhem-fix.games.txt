@@ -44,6 +44,7 @@
 
 		"Signatures"
 		{
+			// Called by `IVP_Mindist_Recursive::do_impact` which contains the string "..\ivp_collision\ivp_mindist_recursive.cxx"
 			"IVP_Mindist::do_impact"
 			{
 				"library"	"vphysics"
